@@ -135,10 +135,73 @@ smallfacts <-c(n/facts)
 isPrime(smallfacts[7])
 smallfacts[4]
 
-factors
-primes
+*******
+Problem #4: Find the largest palindrome made from the product of two 3-digit numbers.
+*Solved using R
 
-##Winning formula:
-#(1) Creating isPrime function
-#(2) Take factors of n. Most streamlined way is to limit search from 2:sqrt
-#(3) Run isPrime for factors. isPrime should run easily up to 9 digits...
+#Create vector of products, sort high to low
+a1 <- c(rev(100:999))
+b = 999
+m <- c()
+while (b>99)
+{
+m <- c(m,b*a1)
+b = b-1
+}
+m <- sort(m, decreasing = TRUE)
+
+#Create functions to split the products, reverse the latter segment
+mirrorDos <- function (c)
+{
+end=floor(c*.1)
+first=c-(end*10)
+rev=(first*10)+end
+rev
+}
+#
+mirrorTres <- function(d)
+{
+end=floor((d)*.01)
+mid=floor((d-(end*100))*.1)
+first=d-(end*100)-(mid*10)
+rev=(first*100)+(mid*10)+end
+rev
+}
+#
+isPal6 <- function(n)
+{
+l=nchar(n, type = "chars", allowNA = FALSE, keepNA = NA)
+firstT <- substr(n,1,3)
+lastT <- substr(n,4,6)
+first3 <- as.numeric(firstT)
+last3 <- as.numeric(lastT)
+if (mirrorTres(last3) == first3)
+{1}
+else {0}
+}
+#
+isPal5 <- function(n)
+{
+l=nchar(n, type = "chars", allowNA = FALSE, keepNA = NA)
+firstD <- substr(n,1,2)
+lastD <- substr(n,4,5)
+first2 <- as.numeric(firstD)
+last2 <- as.numeric(lastD)
+if (mirrorDos(last2) == first2)
+{1}
+else {0}
+}
+
+#Run Test
+
+x=1
+isPal = 0
+while (isPal <1)
+{
+isPal = isPal6(m[x])
+x= x+1
+}
+m[x-1]
+
+
+********
