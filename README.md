@@ -1,5 +1,5 @@
 # Project-Euler
-Project Euler problems solved using R, Python
+Project Euler problems solved using R & Python
 
 **********
 Problem #1:
