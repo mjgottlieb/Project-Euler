@@ -232,12 +232,9 @@ n
 Answer: 232,792,560
 
 ********
-Problem #6: The sum of the squares of the first ten natural numbers is,
-
-12 + 22 + ... + 102 = 385 <br />
-The square of the sum of the first ten natural numbers is,
-
-(1 + 2 + ... + 10)2 = 552 = 3025 <br />
+Problem #6: <br /> 
+The sum of the squares of the first ten natural numbers is 1^2 + 2^2 + ... + 10^2 = 385 <br />
+The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)^2 = 552 = 3025 <br />
 Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
@@ -251,220 +248,235 @@ n <- c(1:100)
 Answer: 25,164,150
 
 ********
-Problem #7: By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+Problem #7: <br />
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
 What is the 10 001st prime number?
 
-Answer:
+Solution (Using R):
 
-#isPrime function
-isPrime <- function(x)
-{
-a=2
-store <- c()
-while (a<(x/2))
-{
-if (x%%a == 0)
-	{
-	store <- c(store,a)
-	break
-	}
-a = a+1
-}
-(if ((sum(store)>0)==TRUE)
-{0}
-else
-{1})
-}
+#isPrime function <br />
+isPrime <- function(x) <br />
+{ <br />
+a=2 <br />
+store <- c() <br />
+while (a<(x/2)) <br />
+{ <br />
+if (x%%a == 0) <br />
+	{ <br />
+	store <- c(store,a) <br />
+	break <br />
+	} <br />
+a = a+1 <br />
+} <br />
+(if ((sum(store)>0)==TRUE) <br />
+{0} <br />
+else <br />
+{1}) <br />
+} <br />
 )
 
-count = 0
-x=3
-while (count < 10001)
-{
-if (isPrime(x) == 1)
-	{count = count + 1}
-x=x+1
-}
-x-1
-isPrime(x-1)
-count
+count = 0 <br />
+x=3 <br />
+while (count < 10001) <br />
+{ <br />
+if (isPrime(x) == 1) <br />
+	{count = count + 1} <br />
+x=x+1 <br />
+} <br />
+x-1 <br />
+isPrime(x-1) <br />
+count <br />
 
-
+Answer: 104,743
 
 ********
-Problem #10: The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+Problem #10: <br />
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
 Find the sum of all the primes below two million.
 
-Answer:
-*Solved using R
+Solution (Using R):
 
-#Utilitzes "isPrime()" function from problem #3
-n=2
-store <- c()
-while (n<2000000)
-{if (isPrime(n)==1)
-{store <- c(store,n)}
-n=n+1}
-store
+#Utilitzes "isPrime()" function from problem #7 <br />
+n=2 <br />
+store <- c() <br />
+while (n<2000000) <br />
+{if (isPrime(n)==1) <br />
+{store <- c(store,n)} <br />
+n=n+1} <br />
+store <br />
 sum(store)
 
-
+Answer: 142,913,828,922
 
 ********
-Problem #11: In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+Problem #11: <br /> 
+In the 20×20 grid below, four numbers along a diagonal line have been marked in bold.
 
-08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
-49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
-81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
-52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
-22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 13 80
-24 47 32 60 99 03 45 02 44 75 33 53 78 36 84 20 35 17 12 50
-32 98 81 28 64 23 67 10 26 38 40 67 59 54 70 66 18 38 64 70
-67 26 20 68 02 62 12 20 95 63 94 39 63 08 40 91 66 49 94 21
-24 55 58 05 66 73 99 26 97 17 78 78 96 83 14 88 34 89 63 72
-21 36 23 09 75 00 76 44 20 45 35 14 00 61 33 97 34 31 33 95
-78 17 53 28 22 75 31 67 15 94 03 80 04 62 16 14 09 53 56 92
-16 39 05 42 96 35 31 47 55 58 88 24 00 17 54 24 36 29 85 57
-86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 54 17 58
-19 80 81 68 05 94 47 69 28 73 92 13 86 52 17 77 04 89 55 40
-04 52 08 83 97 35 99 16 07 97 57 32 16 26 26 79 33 27 98 66
-88 36 68 87 57 62 20 72 03 46 33 67 46 55 12 32 63 93 53 69
-04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36
-20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
-20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
-01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
+08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 <br />
+49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 <br />
+81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65 <br />
+52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91 <br />
+22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 13 80 <br />
+24 47 32 60 99 03 45 02 44 75 33 53 78 36 84 20 35 17 12 50 <br />
+32 98 81 28 64 23 67 10 26 38 40 67 59 54 70 66 18 38 64 70 <br />
+67 26 20 68 02 62 12 20 95 63 94 39 63 08 40 91 66 49 94 21 <br />
+24 55 58 05 66 73 99 26 97 17 78 78 96 83 14 88 34 89 63 72 <br />
+21 36 23 09 75 00 76 44 20 45 35 14 00 61 33 97 34 31 33 95 <br />
+78 17 53 28 22 75 31 67 15 94 03 80 04 62 16 14 09 53 56 92 <br />
+16 39 05 42 96 35 31 47 55 58 88 24 00 17 54 24 36 29 85 57 <br />
+86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 54 17 58 <br />
+19 80 81 68 05 94 47 69 28 73 92 13 86 52 17 77 04 89 55 40 <br />
+04 52 08 83 97 35 99 16 07 97 57 32 16 26 26 79 33 27 98 66 <br />
+88 36 68 87 57 62 20 72 03 46 33 67 46 55 12 32 63 93 53 69 <br />
+04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36 <br />
+20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16 <br />
+20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 <br />
+01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48 <br />
 
 The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
-Answer:
-*Solved using R
+Solution (Using R):
 
-a = matrix (c(08,02,22,97,38,15,00,40,00,75,04,05,07,78,52,12,50,77,91,08,49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48,04,56,62,00,81,49,31,73,55,79,14,29,93,71,40,67,53,88,30,03,49,13,36,65,52,70,95,23,04,60,11,42,69,24,68,56,01,32,56,71,37,02,36,91, 22,31,16,71,51,67,63,89,41,92,36,54,22,40,40,28,66,33,13,80, 24,47,32,60,99,03,45,02,44,75,33,53,78,36,84,20,35,17,12,50, 32, 98, 81, 28, 64, 23, 67, 10, 26, 38, 40, 67, 59, 54, 70, 66, 18, 38, 64, 70, 67, 26, 20, 68, 02, 62, 12, 20, 95, 63, 94, 39, 63, 08, 40, 91, 66, 49, 94, 21, 24, 55, 58, 05, 66, 73, 99, 26, 97, 17, 78, 78, 96, 83, 14, 88, 34, 89, 63, 72, 21, 36, 23, 09, 75, 00, 76, 44, 20, 45, 35, 14, 00, 61, 33, 97, 34, 31, 33, 95, 78, 17, 53, 28, 22, 75, 31, 67, 15, 94, 03, 80, 04, 62, 16, 14, 09, 53, 56, 92, 16, 39, 05, 42, 96, 35, 31, 47, 55, 58, 88, 24, 00, 17, 54, 24, 36, 29, 85, 57, 86, 56, 00, 48, 35, 71, 89, 07, 05, 44, 44, 37, 44, 60, 21, 58, 51, 54, 17, 58, 19, 80, 81, 68, 05, 94, 47, 69, 28, 73, 92, 13, 86, 52, 17, 77, 04, 89, 55, 40, 04, 52, 08, 83, 97, 35, 99, 16, 07, 97, 57, 32, 16, 26,26,79, 33, 27, 98, 66, 88, 36, 68, 87, 57, 62, 20, 72, 03, 46, 33, 67, 46, 55, 12, 32, 63, 93, 53, 69, 04, 42, 16, 73, 38, 25, 39, 11, 24, 94, 72, 18, 08, 46, 29, 32, 40, 62, 76, 36, 20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 04, 36, 16, 20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54, 01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48),nrow=20,ncol=20)
+a = matrix (c(08,02,22,97,38,15,00,40,00,75,04,05,07,78,52,12,50,77,91,08, <br /> 49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48,04,56,62,00, <br /> 
+81,49,31,73,55,79,14,29,93,71,40,67,53,88,30,03,49,13,36,65, <br /> 
+52,70,95,23,04,60,11,42,69,24,68,56,01,32,56,71,37,02,36,91, <br />
+22,31,16,71,51,67,63,89,41,92,36,54,22,40,40,28,66,33,13,80, <br />
+24,47,32,60,99,03,45,02,44,75,33,53,78,36,84,20,35,17,12,50, <br />
+32,98,81,28,64,23,67,10,26,38,40,67,59,54,70,66,18,38,64,70, <br />
+67,26,20,68,02,62,12,20,95,63,94,39,63,08,40,91,66,49,94,21, <br />
+24,55,58,05,66,73,99,26,97,17,78,78,96,83,14,88,34,89,63,72, <br />
+21,36,23,09,75,00,76,44,20,45,35,14,00,61,33,97,34,31,33,95, <br />
+78,17,53,28,22,75,31,67,15,94,03,80,04,62,16,14,09,53,56,92, <br /> 
+16,39,05,42,96,35,31,47,55,58,88,24,00,17,54,24,36,29,85,57, <br />
+86,56,00,48,35,71,89,07,05,44,44,37,44,60,21,58,51,54,17,58, <br />
+19,80,81,68,05,94,47,69,28,73,92,13,86,52,17,77,04,89,55,40, <br />
+04,52,08,83,97,35,99,16,07,97,57,32,16,26,16,79,33,27,98,66, <br />
+88,36,68,87,57,62,20,72,03,46,33,67,46,55,12,32,63,93,53,69, <br />
+04,42,16,73,38,25,39,11,24,94,72,18,08,46,29,32,40,62,76,36, <br />
+20,69,36,41,72,30,23,88,34,62,99,69,82,67,59,85,74,04,36,16, <br />
+20,73,35,29,78,31,90,01,74,31,49,71,48,86,81,16,23,57,05,54, <br />
+01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48),nrow=20,ncol=20)
 grid = t(a)
-grid[3,4]
 
-#rows max
-c=1
-r=1
-rmax = 0
-while (r<=20)
-{
-while (c<=17)
-{
-test = grid[r,c]*grid[r,c+1]*grid[r,c+2]*grid[r,c+3] 
-if (test > rmax) {rmax = test}
-c=c+1
-}
-r=r+1
-c=1
-}
-rmax
+#rows max <br />
+c=1 <br />
+r=1 <br />
+rmax = 0 <br />
+while (r<=20) <br />
+{ <br />
+while (c<=17) <br />
+{ <br />
+test = grid[r,c]*grid[r,c+1]*grid[r,c+2]*grid[r,c+3] <br /> 
+if (test > rmax) {rmax = test} <br />
+c=c+1 <br />
+} <br />
+r=r+1 <br />
+c=1 <br />
+} <br />
 
-#columns max
-c=1
-r=1
-cmax = 0
-while (c<=20)
-{
-while (r<=17)
-{
-test = grid[r,c]*grid[r+1,c]*grid[r+2,c]*grid[r+3,c] 
-if (test > cmax) {cmax = test}
-r=r+1
-}
-c=c+1
-r=1
-}
-cmax
-
-#diagonal down max
-c=1
-r=1
-ddmax = 0
-while (r<=17)
-{
-while (c<=17)
-{
-test = grid[r,c]*grid[r+1,c+1]*grid[r+2,c+2]*grid[r+2,c+3] 
-if (test > ddmax) {ddmax = test}
-c=c+1
-}
-r=r+1
-c=1
-}
-ddmax
-
-#diagonal up max
-c=1
-r=4
-dumax = 0
-while (r<=20)
-{
-while (c<=17)
-{
-test = grid[r,c]*grid[r-1,c+1]*grid[r-2,c+2]*grid[r-3,c+3] 
-if (test > dumax) {dumax = test}
-c=c+1
-}
-r=r+1
-c=1
-}
-dumax
-
-allthree <- c(rmax, cmax, ddmax, dumax)
-max(allthree)
+#columns max <br />
+c=1 <br />
+r=1 <br />
+cmax = 0 <br />
+while (c<=20) <br />
+{ <br />
+while (r<=17) <br />
+{ <br />
+test = grid[r,c]*grid[r+1,c]*grid[r+2,c]*grid[r+3,c] <br /> 
+if (test > cmax) {cmax = test} <br />
+r=r+1 <br />
+} <br />
+c=c+1 <br />
+r=1 <br />
+} <br />
 
 
+#diagonal down max <br />
+c=1 <br />
+r=1 <br />
+ddmax = 0 <br />
+while (r<=17) <br />
+{ <br />
+while (c<=17) <br />
+{ <br />
+test = grid[r,c]*grid[r+1,c+1]*grid[r+2,c+2]*grid[r+2,c+3]  <br />
+if (test > ddmax) {ddmax = test} <br />
+c=c+1 <br />
+} <br />
+r=r+1 <br />
+c=1 <br />
+} <br />
+
+
+#diagonal up max <br />
+c=1 <br />
+r=4 <br />
+dumax = 0 <br />
+while (r<=20) <br />
+{ <br />
+while (c<=17) <br />
+{ <br />
+test = grid[r,c]*grid[r-1,c+1]*grid[r-2,c+2]*grid[r-3,c+3]  <br />
+if (test > dumax) {dumax = test} <br />
+c=c+1 <br />
+} <br />
+r=r+1 <br />
+c=1 <br />
+} <br />
+
+
+allthree <- c(rmax, cmax, ddmax, dumax) <br />
+max(allthree) <br />
+
+Answer: 70,600,674
 
 ********
-Problem #12: The sequence of triangle numbers is generated by adding the natural numbers. So the 7th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. The first ten terms would be:
+Problem #12: <br />
+The sequence of triangle numbers is generated by adding the natural numbers. So the 7th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. The first ten terms would be:
 
 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
 
 Let us list the factors of the first seven triangle numbers:
 
- 1: 1
- 3: 1,3
- 6: 1,2,3,6
-10: 1,2,5,10
-15: 1,3,5,15
-21: 1,3,7,21
-28: 1,2,4,7,14,28
+ 1: 1 <br />
+ 3: 1,3 <br />
+ 6: 1,2,3,6 <br />
+10: 1,2,5,10 <br />
+15: 1,3,5,15 <br />
+21: 1,3,7,21 <br />
+28: 1,2,4,7,14,28 <br />
 We can see that 28 is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over five hundred divisors?
 
-Answer:
-*Solved using R
+Solution (Using R):
 
-trinum = c(1)
-n=2
-while (n<2000000)
-{trinum <- c(trinum,trinum[n-1]+n)
-n=n+1}
-trinum
+trinum = c(1) <br />
+n=2 <br />
+while (n<2000000) <br />
+{trinum <- c(trinum,trinum[n-1]+n) <br />
+n=n+1} <br />
 
-
-count = 0
-check = 1
-x=1
-while (x<=length(trinum))
-{while (check <= sqrt(trinum[x]))
-{if (trinum[x]%%check == 0)
-{count = count+1}
-if (count>250) 
-{break
-x}
-check = check +1}
+count = 0 <br />
+check = 1 <br />
+x=1 <br />
+while (x<=length(trinum)) <br />
+{while (check <= sqrt(trinum[x])) <br />
+{if (trinum[x]%%check == 0) <br />
+{count = count+1} <br />
+if (count>250)  <br />
+{break <br />
+x} <br />
+check = check +1} <br />
 x=x+1}
 
 trinum[n-1]
 
-
+Answer: 
 
 ********
 Problem #19: You are given the following information, but you may prefer to do some research for yourself.
