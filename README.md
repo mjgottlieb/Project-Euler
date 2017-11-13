@@ -6,8 +6,7 @@ Problem #1: <br />
 Find the sum of all the multiples of 3 or 5 below 1000. 
 
 
-Answer: <br />
-*Solved using R
+Solution (Using R):
 
 Prob1 <- c()
 
@@ -27,13 +26,13 @@ b = b+1} <br />
 
 sum(Prob1)
 
+Answer: 233,168
 
 **********
 Problem #2: <br />
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms
 
-Answer: <br />
-*Solved using R
+Solution (Using R):
 
 Arr <- c(1,2) <br />
 pos = 3 <br />
@@ -58,197 +57,198 @@ evenpos = evenpos + 1 <br />
 
 sum(evenvec)
 
+Answer: 4,613,732
 
 **********
 Problem #3:
 What is the largest prime factor of the number 600851475143 ?
 
-Answer:
-Solived using R
+Solution (Using R):
 
-#Create isPrime function
-isPrime <- function(x)
-{
-a=2
-store <- c()
-while (a<=sqrt(x))
-{
-if (x%%a == 0)
-	{
-	store <- c(store,a)
-	break
-	}
-a = a+1
-}
-(if ((sum(store)>0)==TRUE)
-{0}
-else
-{1})
+#Create isPrime function <br />
+isPrime <- function(x) <br />
+{ <br />
+a=2 <br />
+store <- c() <br />
+while (a<=sqrt(x)) <br />
+{ <br />
+if (x%%a == 0) <br />
+	{ <br />
+	store <- c(store,a) <br />
+	break <br />
+	} <br />
+a = a+1 <br />
+} <br />
+(if ((sum(store)>0)==TRUE) <br />
+{0} <br />
+else <br />
+{1}) <br />
 }
 
-#define variables
-factors <- c()
-primes <- c()
+#define variables <br />
+factors <- c() <br />
+primes <- c() <br />
 n = 600851475143
 
-#Sampling the largest factors of n
-div <- c(4601:5200)
-b=1
-mod <- c()
-while (b<=length(div))
-{
-mod <- c(mod,n%%div[b])
-b=b+1
-}
+#Sampling the largest factors of n <br />
+div <- c(4601:5200) <br />
+b=1 <br />
+mod <- c() <br />
+while (b<=length(div)) <br />
+{ <br />
+mod <- c(mod,n%%div[b]) <br />
+b=b+1 <br />
+} <br />
 mod
 
 (n/2)-sqrt(n)
 
-#isPrime(5000004401)
-isPrime(n/1471)
-#identiry factors (largest to smallest), test isPrime
-test = floor(n/2)
-#while (length(primes)==0)
-while (test>(n/2-10000000000))
-{
-if (n%%test==0)
-	{
-	factors <- c(factors,test)
-	}
-test = test - 1
-}
-factors
-if (isPrime(factors[length(factors)] == 1))
-	{
-	primes <- c(primes,test)
-	} 
-test = test-1
+#identiry factors (largest to smallest), test isPrime <br />
+test = floor(n/2) <br />
+#while (length(primes)==0) <br />
+while (test>(n/2-10000000000)) <br />
+{ <br />
+if (n%%test==0) <br />
+	{ <br />
+	factors <- c(factors,test) <br />
+	} <br />
+test = test - 1 <br />
+} <br />
+factors <br />
+if (isPrime(factors[length(factors)] == 1)) <br />
+	{ <br />
+	primes <- c(primes,test) <br />
+	}  <br />
+test = test-1 <br />
 }
 
-c=2
-facts <- c()
-while (c<=sqrt(n))
-{
-if (n%%c == 0)
-	{
-	facts <- c(facts, n/c)
-	}
-c=c+1
-}
-facts
-isPrime(facts[1])
+c=2 <br />
+facts <- c() <br />
+while (c<=sqrt(n)) <br />
+{ <br />
+if (n%%c == 0) <br />
+	{ <br />
+	facts <- c(facts, n/c) <br />
+	} <br />
+c=c+1 <br />
+} <br />
+facts <br />
+isPrime(facts[1]) <br />
 
-smallfacts <-c(n/facts)
-isPrime(smallfacts[7])
+smallfacts <-c(n/facts) <br />
+isPrime(smallfacts[7]) <br />
 smallfacts[4]
+
+Answer: 6,857
 
 *******
 Problem #4: Find the largest palindrome made from the product of two 3-digit numbers.
-*Solved using R
 
-#Create vector of products, sort high to low
-a1 <- c(rev(100:999))
-b = 999
-m <- c()
-while (b>99)
-{
-m <- c(m,b*a1)
-b = b-1
-}
+Solution (using R):
+
+#Create vector of products, sort high to low <br />
+a1 <- c(rev(100:999)) <br />
+b = 999 <br />
+m <- c() <br />
+while (b>99) <br />
+{ <br />
+m <- c(m,b*a1) <br />
+b = b-1 <br />
+} <br />
 m <- sort(m, decreasing = TRUE)
 
-#Create functions to split the products, reverse the latter segment
-mirrorDos <- function (c)
-{
-end=floor(c*.1)
-first=c-(end*10)
-rev=(first*10)+end
-rev
+#Create functions to split the products, reverse the latter segment <br />
+mirrorDos <- function (c) <br />
+{ <br />
+end=floor(c*.1) <br />
+first=c-(end*10) <br />
+rev=(first*10)+end <br />
+rev <br />
+} <br />
+
+mirrorTres <- function(d) <br />
+{ <br />
+end=floor((d)*.01) <br />
+mid=floor((d-(end*100))*.1) <br />
+first=d-(end*100)-(mid*10) <br />
+rev=(first*100)+(mid*10)+end <br />
+rev <br />
+} <br />
+
+isPal6 <- function(n) <br />
+{ <br />
+l=nchar(n, type = "chars", allowNA = FALSE, keepNA = NA) <br />
+firstT <- substr(n,1,3) <br />
+lastT <- substr(n,4,6) <br />
+first3 <- as.numeric(firstT) <br />
+last3 <- as.numeric(lastT) <br />
+if (mirrorTres(last3) == first3) <br />
+{1} <br />
+else {0} <br />
 }
-#
-mirrorTres <- function(d)
-{
-end=floor((d)*.01)
-mid=floor((d-(end*100))*.1)
-first=d-(end*100)-(mid*10)
-rev=(first*100)+(mid*10)+end
-rev
-}
-#
-isPal6 <- function(n)
-{
-l=nchar(n, type = "chars", allowNA = FALSE, keepNA = NA)
-firstT <- substr(n,1,3)
-lastT <- substr(n,4,6)
-first3 <- as.numeric(firstT)
-last3 <- as.numeric(lastT)
-if (mirrorTres(last3) == first3)
-{1}
-else {0}
-}
-#
-isPal5 <- function(n)
-{
-l=nchar(n, type = "chars", allowNA = FALSE, keepNA = NA)
-firstD <- substr(n,1,2)
-lastD <- substr(n,4,5)
-first2 <- as.numeric(firstD)
-last2 <- as.numeric(lastD)
-if (mirrorDos(last2) == first2)
-{1}
-else {0}
+
+isPal5 <- function(n) <br />
+{ <br />
+l=nchar(n, type = "chars", allowNA = FALSE, keepNA = NA) <br />
+firstD <- substr(n,1,2) <br />
+lastD <- substr(n,4,5) <br />
+first2 <- as.numeric(firstD) <br />
+last2 <- as.numeric(lastD) <br />
+if (mirrorDos(last2) == first2) <br />
+{1} <br />
+else {0} <br />
 }
 
 #Run Test
 
-x=1
-isPal = 0
-while (isPal <1)
-{
-isPal = isPal6(m[x])
-x= x+1
-}
+x=1 <br />
+isPal = 0 <br />
+while (isPal <1) <br />
+{ <br />
+isPal = isPal6(m[x]) <br />
+x= x+1 <br />
+} <br />
 m[x-1]
 
+Answer: 906,609
 
 ********
 Problem #5: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-Answer:
-*Solved using R
+Solution (Using R):
 
-div <- c(1:20)
-mod <- c(1)
+div <- c(1:20) <br />
+mod <- c(1) <br />
 n = 2520
 
 
-while (sum(mod)>0)
-{
-mod <- c(n%%div)
-n=n+20
-}
+while (sum(mod)>0) <br />
+{ <br />
+mod <- c(n%%div) <br />
+n=n+20 <br />
+} <br />
 n
 
+Answer: 232,792,560
 
 ********
 Problem #6: The sum of the squares of the first ten natural numbers is,
 
-12 + 22 + ... + 102 = 385
+12 + 22 + ... + 102 = 385 <br />
 The square of the sum of the first ten natural numbers is,
 
-(1 + 2 + ... + 10)2 = 552 = 3025
+(1 + 2 + ... + 10)2 = 552 = 3025 <br />
 Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-Answer:
-*Solved using R
+Solution (Using R):
 
 n <- c(1:100)
 
 ((sum(n))^2)-sum(n^2)
 
-
+Answer: 25,164,150
 
 ********
 Problem #7: By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
