@@ -26,13 +26,13 @@ b = b+1} <br />
 
 sum(Prob1)
 
-Answer: 233,168
+**Answer: 233,168**
 
 **********
-Problem #2: <br />
+**Problem #2:** <br />
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms
 
-Solution (Using R):
+**Solution (Using R):**
 
 Arr <- c(1,2) <br />
 pos = 3 <br />
@@ -57,13 +57,13 @@ evenpos = evenpos + 1 <br />
 
 sum(evenvec)
 
-Answer: 4,613,732
+**Answer: 4,613,732**
 
 **********
-Problem #3:
+**Problem #3:**
 What is the largest prime factor of the number 600851475143 ?
 
-Solution (Using R):
+**Solution (Using R):**
 
 #Create isPrime function <br />
 isPrime <- function(x) <br />
@@ -139,12 +139,13 @@ smallfacts <-c(n/facts) <br />
 isPrime(smallfacts[7]) <br />
 smallfacts[4]
 
-Answer: 6,857
+**Answer: 6,857**
 
 *******
-Problem #4: Find the largest palindrome made from the product of two 3-digit numbers.
+**Problem #4:** <br /> 
+Find the largest palindrome made from the product of two 3-digit numbers.
 
-Solution (using R):
+**Solution (using R):**
 
 #Create vector of products, sort high to low <br />
 a1 <- c(rev(100:999)) <br />
@@ -210,12 +211,13 @@ x= x+1 <br />
 } <br />
 m[x-1]
 
-Answer: 906,609
+**Answer: 906,609**
 
 ********
-Problem #5: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+**Problem #5:** <br /> 
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-Solution (Using R):
+**Solution (Using R):**
 
 div <- c(1:20) <br />
 mod <- c(1) <br />
@@ -229,17 +231,17 @@ n=n+20 <br />
 } <br />
 n
 
-Answer: 232,792,560
+**Answer: 232,792,560**
 
 ********
-Problem #6: <br /> 
+**Problem #6:** <br /> 
 The sum of the squares of the first ten natural numbers is 1^2 + 2^2 + ... + 10^2 = 385 <br />
 The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)^2 = 552 = 3025 <br />
 Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-Solution (Using R):
+**Solution (Using R):**
 
 n <- c(1:100)
 
@@ -253,7 +255,7 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 
 What is the 10 001st prime number?
 
-Solution (Using R):
+**Solution (Using R):**
 
 #isPrime function <br />
 isPrime <- function(x) <br />
@@ -288,15 +290,15 @@ x-1 <br />
 isPrime(x-1) <br />
 count <br />
 
-Answer: 104,743
+**Answer: 104,743**
 
 ********
-Problem #10: <br />
+**Problem #10:** <br />
 The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
 Find the sum of all the primes below two million.
 
-Solution (Using R):
+**Solution (Using R):**
 
 #Utilitzes "isPrime()" function from problem #7 <br />
 n=2 <br />
@@ -308,10 +310,10 @@ n=n+1} <br />
 store <br />
 sum(store)
 
-Answer: 142,913,828,922
+**Answer: 142,913,828,922**
 
 ********
-Problem #11: <br /> 
+**Problem #11:** <br /> 
 In the 20×20 grid below, four numbers along a diagonal line have been marked in bold.
 
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 <br />
@@ -320,10 +322,10 @@ In the 20×20 grid below, four numbers along a diagonal line have been marked in
 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91 <br />
 22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 13 80 <br />
 24 47 32 60 99 03 45 02 44 75 33 53 78 36 84 20 35 17 12 50 <br />
-32 98 81 28 64 23 67 10 26 38 40 67 59 54 70 66 18 38 64 70 <br />
-67 26 20 68 02 62 12 20 95 63 94 39 63 08 40 91 66 49 94 21 <br />
-24 55 58 05 66 73 99 26 97 17 78 78 96 83 14 88 34 89 63 72 <br />
-21 36 23 09 75 00 76 44 20 45 35 14 00 61 33 97 34 31 33 95 <br />
+32 98 81 28 64 23 67 10 **26** 38 40 67 59 54 70 66 18 38 64 70 <br />
+67 26 20 68 02 62 12 20 95 **63** 94 39 63 08 40 91 66 49 94 21 <br />
+24 55 58 05 66 73 99 26 97 17 **78** 78 96 83 14 88 34 89 63 72 <br />
+21 36 23 09 75 00 76 44 20 45 35 **14** 00 61 33 97 34 31 33 95 <br />
 78 17 53 28 22 75 31 67 15 94 03 80 04 62 16 14 09 53 56 92 <br />
 16 39 05 42 96 35 31 47 55 58 88 24 00 17 54 24 36 29 85 57 <br />
 86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 54 17 58 <br />
@@ -339,7 +341,7 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
-Solution (Using R):
+**Solution (Using R):**
 
 a = matrix (c(08,02,22,97,38,15,00,40,00,75,04,05,07,78,52,12,50,77,91,08, <br /> 49,49,99,40,17,81,18,57,60,87,17,40,98,43,69,48,04,56,62,00, <br /> 
 81,49,31,73,55,79,14,29,93,71,40,67,53,88,30,03,49,13,36,65, <br /> 
@@ -432,10 +434,10 @@ c=1 <br />
 allthree <- c(rmax, cmax, ddmax, dumax) <br />
 max(allthree) <br />
 
-Answer: 70,600,674
+**Answer: 70,600,674**
 
 ********
-Problem #12: <br />
+**Problem #12:** <br />
 The sequence of triangle numbers is generated by adding the natural numbers. So the 7th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. The first ten terms would be:
 
 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
@@ -453,7 +455,7 @@ We can see that 28 is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over five hundred divisors?
 
-Solution (Using R):
+**Solution (Using R):**
 
 trinum = c(1) <br />
 n=2 <br />
@@ -476,68 +478,65 @@ x=x+1}
 
 trinum[n-1]
 
-Answer: 
+**Answer: **
 
 ********
-Problem #19: You are given the following information, but you may prefer to do some research for yourself.
+**Problem #19:** <br /> 
+You are given the following information, but you may prefer to do some research for yourself.
 
-1 Jan 1900 was a Monday.
-Thirty days has September,
-April, June and November.
-All the rest have thirty-one,
-Saving February alone,
-Which has twenty-eight, rain or shine.
-And on leap years, twenty-nine.
-A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
+1 Jan 1900 was a Monday. <br />
+Thirty days has September, <br />
+April, June and November. <br />
+All the rest have thirty-one, <br />
+Saving February alone, <br />
+Which has twenty-eight, rain or shine. <br />
+And on leap years, twenty-nine. <br />
+A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400. <br />
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
-Answer:
-*Solved using R
+**Solution (Using R):
 
-m1 <- c(1:31)
-m2 <- c(1:28)
-m2l <- c(1:29)
-m3 <- c(1:31)
-m4 <- c(1:30)
-m5 <- c(1:31)
-m6 <- c(1:30)
-m7 <- c(1:31)
-m8 <- c(1:31)
-m9 <- c(1:30)
-m10 <- c(1:31)
-m11 <- c(1:30)
+m1 <- c(1:31) <br />
+m2 <- c(1:28) <br />
+m2a <- c(1:29) <br />
+m3 <- c(1:31) <br />
+m4 <- c(1:30) <br />
+m5 <- c(1:31) <br />
+m6 <- c(1:30) <br />
+m7 <- c(1:31) <br />
+m8 <- c(1:31) <br />
+m9 <- c(1:30) <br />
+m10 <- c(1:31) <br />
+m11 <- c(1:30) <br />
 m12 <- c(1:31)
 
-yearReg <- c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12)
-yearLeap <- c(m1,m2l,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12)
-days <- c(1:7)
+yearReg <- c(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12) <br />
+yearLeap <- c(m1,m2a,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12) <br />
+days <- c(1:7) <br />
 dow <- c(1:7)
 
-dates <- c(yearReg)
-yr = 1901
-while (yr <= 2000)
-{if (yr%%4 == 0)
-  {dates <- c(dates,yearLeap)}
- else {dates <- c(dates,yearReg)}
-yr = yr+1
-}
-length(dates)
-while (length(days) < length(dates))
-{days <- c(days,dow)}
-length(days)
-dates[366]
-#datesArray
-#days
+dates <- c(yearReg) <br />
+yr = 1901 <br />
+while (yr <= 2000) <br />
+{if (yr%%4 == 0) <br />
+  {dates <- c(dates,yearLeap)} <br />
+ else {dates <- c(dates,yearReg)} <br />
+yr = yr+1 <br />
+} <br />
+length(dates) <br />
+while (length(days) < length(dates)) <br />
+{days <- c(days,dow)} <br />
+length(days) <br />
+dates[366] <br />
 
-#test <- c(datesArray * days)
-#length(test)
-
-n=366
-sun1=0
-while (n<=length(days))
-{if (days[n] == 7)
-   {if (dates[n] == 1)
-    {sun1 = sun1 + 1}}
-n = n+1
-}
+n=366 <br />
+sun1=0 <br />
+while (n<=length(days)) <br />
+{if (days[n] == 7) <br />
+   {if (dates[n] == 1) <br />
+    {sun1 = sun1 + 1}} <br />
+n = n+1 <br />
+} <br />
 sun1
+
+**Answer: 171** 
