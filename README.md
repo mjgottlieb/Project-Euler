@@ -11,9 +11,9 @@ Answer:
 
 Prob1 <- c()
 
-a=0 
-b=0 
-n=1000 
+a=0 <br />
+b=0 <br />
+n=1000 <br />
 while (a <= n) 
 {if (a%%3 == 0) 
 { 
