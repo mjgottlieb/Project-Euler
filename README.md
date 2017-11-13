@@ -205,3 +205,105 @@ m[x-1]
 
 
 ********
+Problem #5: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+Answer:
+*Solved using R
+
+div <- c(1:20)
+mod <- c(1)
+n = 2520
+
+
+while (sum(mod)>0)
+{
+mod <- c(n%%div)
+n=n+20
+}
+n
+
+
+********
+Problem #6: The sum of the squares of the first ten natural numbers is,
+
+12 + 22 + ... + 102 = 385
+The square of the sum of the first ten natural numbers is,
+
+(1 + 2 + ... + 10)2 = 552 = 3025
+Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+Answer:
+*Solved using R
+
+n <- c(1:100)
+
+((sum(n))^2)-sum(n^2)
+
+
+
+********
+Problem #7: By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+What is the 10 001st prime number?
+
+Answer:
+
+#isPrime function
+isPrime <- function(x)
+{
+a=2
+store <- c()
+while (a<(x/2))
+{
+if (x%%a == 0)
+	{
+	store <- c(store,a)
+	break
+	}
+a = a+1
+}
+(if ((sum(store)>0)==TRUE)
+{0}
+else
+{1})
+}
+)
+
+count = 0
+x=3
+while (count < 10001)
+{
+if (isPrime(x) == 1)
+	{count = count + 1}
+x=x+1
+}
+x-1
+isPrime(x-1)
+count
+
+
+
+********
+Problem #10: The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.
+
+Answer:
+*Solved using R
+
+#Utilitzes "isPrime()" function from problem #3
+n=2
+store <- c()
+while (n<2000000)
+{if (isPrime(n)==1)
+{store <- c(store,n)}
+n=n+1}
+store
+sum(store)
+
+
+
+********
+Problem #11: 
