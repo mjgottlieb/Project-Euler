@@ -12,7 +12,7 @@ Answer:
 Prob1 <- c()
 
 a=0
-b=0
+**b=0
 n=1000
 while (a <= n)
 {if (a%%3 == 0)
