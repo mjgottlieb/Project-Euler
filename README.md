@@ -11,19 +11,19 @@ Answer:
 
 Prob1 <- c()
 
-a=0
-* b=0
-n=1000
-while (a <= n)
-{if (a%%3 == 0)
-{
-Prob1 = c(Prob1,a)
-}
-if (b%%5 == 0)
-{if (b%%3 != 0)
-{Prob1 <- c(Prob1, b)}}
-a = a+1
-b = b+1}
+a=0 
+b=0 
+n=1000 
+while (a <= n) 
+{if (a%%3 == 0) 
+{ 
+Prob1 = c(Prob1,a) 
+} 
+if (b%%5 == 0) 
+{if (b%%3 != 0) 
+{Prob1 <- c(Prob1, b)}} 
+a = a+1 
+b = b+1} 
 
 sum(Prob1)
 
