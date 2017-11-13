@@ -2,11 +2,11 @@
 Project Euler problems solved using R & Python
 
 **********
-Problem #1:
+Problem #1: <br />
 Find the sum of all the multiples of 3 or 5 below 1000. 
 
 
-Answer:
+Answer: <br />
 *Solved using R
 
 Prob1 <- c()
@@ -14,46 +14,46 @@ Prob1 <- c()
 a=0 <br />
 b=0 <br />
 n=1000 <br />
-while (a <= n) 
-{if (a%%3 == 0) 
-{ 
-Prob1 = c(Prob1,a) 
-} 
-if (b%%5 == 0) 
-{if (b%%3 != 0) 
-{Prob1 <- c(Prob1, b)}} 
-a = a+1 
-b = b+1} 
+while (a <= n) <br />
+{if (a%%3 == 0) <br />
+{ <br />
+Prob1 = c(Prob1,a) <br />
+} <br />
+if (b%%5 == 0) <br />
+{if (b%%3 != 0) <br />
+{Prob1 <- c(Prob1, b)}} <br />
+a = a+1 <br />
+b = b+1} <br />
 
 sum(Prob1)
 
 
 **********
-Problem #2:
+Problem #2: <br />
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms
 
-Answer:
+Answer: <br />
 *Solved using R
 
-Arr <- c(1,2)
-pos = 3
+Arr <- c(1,2) <br />
+pos = 3 <br />
 n=Arr[pos-2]+Arr[pos-1]
 
-while (n <= 4000000)
-{Arr <- c(Arr,n)
-pos = pos+1
+while (n <= 4000000) <br />
+{Arr <- c(Arr,n) <br />
+pos = pos+1 <br />
 n=Arr[pos-2]+Arr[pos-1]}
 
-evenpos= 1
-evenvec <- c()
-while (evenpos <= length(Arr))
-{
-a = Arr[evenpos]
-  if (a%%2 == 0)
-  {
-  evenvec <- c(evenvec,Arr[evenpos])
-  }
-evenpos = evenpos + 1
+evenpos= 1 <br />
+evenvec <- c() <br />
+while (evenpos <= length(Arr)) <br />
+{ <br />
+a = Arr[evenpos] <br />
+  if (a%%2 == 0) <br />
+  { <br />
+  evenvec <- c(evenvec,Arr[evenpos]) <br />
+  } <br />
+evenpos = evenpos + 1 <br />
 }
 
 sum(evenvec)
