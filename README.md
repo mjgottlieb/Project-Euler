@@ -11,8 +11,7 @@ Answer:
 
 Prob1 <- c()
 
-a=0
-*
+a=0***
 b=0
 n=1000
 while (a <= n)
