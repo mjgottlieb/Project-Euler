@@ -118,10 +118,10 @@ if (n%%test==0)
 test = test - 1
 }
 factors
-#if (isPrime(factors[length(factors)] == 1))
-#	{
-#	primes <- c(primes,test)
-#	} 
+if (isPrime(factors[length(factors)] == 1))
+	{
+	primes <- c(primes,test)
+	} 
 test = test-1
 }
 
