@@ -11,18 +11,17 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 Prob1 <- c()
 
 a=0 <br />
-b=0 <br />
 n=1000 <br />
 while (a <= n) <br />
 {if (a%%3 == 0) <br />
 { <br />
 Prob1 = c(Prob1,a) <br />
 } <br />
-if (b%%5 == 0) <br />
-{if (b%%3 != 0) <br />
+if (a%%5 == 0) <br />
+{if (a%%3 != 0) <br />
 {Prob1 <- c(Prob1, b)}} <br />
 a = a+1 <br />
-b = b+1} <br />
+}
 
 sum(Prob1)
 
