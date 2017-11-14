@@ -102,7 +102,7 @@ mod <- c(mod,n%%div[b]) <br />
 b=b+1 <br />
 } <br />
 
-#identiry factors (largest to smallest), test isPrime <br />
+#identify factors (largest to smallest), test isPrime <br />
 test = floor(n/2) <br />
 #while (length(primes)==0) <br />
 while (test>(n/2-10000000000)) <br />
