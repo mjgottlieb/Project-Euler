@@ -58,8 +58,6 @@ sum(evenvec)
 
 **Answer: 4,613,732**
 
-**Answer: 6,857**
-
 **********
 **Problem #3:**
 What is the largest prime factor of the number 600851475143 ?
