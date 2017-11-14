@@ -33,23 +33,23 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 **Solution (Using R):**
 
-Arr <- c(1,2) <br />
+Fib <- c(1,2) <br />
 pos = 3 <br />
-n=Arr[pos-2]+Arr[pos-1]
+n=Fib[pos-2]+Fib[pos-1]
 
 while (n <= 4000000) <br />
-{Arr <- c(Arr,n) <br />
+{Fib <- c(Fib,n) <br />
 pos = pos+1 <br />
-n=Arr[pos-2]+Arr[pos-1]}
+n=Fib[pos-2]+Fib[pos-1]}
 
 evenpos= 1 <br />
 evenvec <- c() <br />
-while (evenpos <= length(Arr)) <br />
+while (evenpos <= length(Fib)) <br />
 { <br />
-a = Arr[evenpos] <br />
+a = Fib[evenpos] <br />
   if (a%%2 == 0) <br />
   { <br />
-  evenvec <- c(evenvec,Arr[evenpos]) <br />
+  evenvec <- c(evenvec,Fib[evenpos]) <br />
   } <br />
 evenpos = evenpos + 1 <br />
 }
