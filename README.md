@@ -101,9 +101,6 @@ while (b<=length(div)) <br />
 mod <- c(mod,n%%div[b]) <br />
 b=b+1 <br />
 } <br />
-mod
-
-(n/2)-sqrt(n)
 
 #identiry factors (largest to smallest), test isPrime <br />
 test = floor(n/2) <br />
