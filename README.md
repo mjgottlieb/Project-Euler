@@ -87,56 +87,27 @@ else <br />
 {1}) <br />
 }
 
-#define variables <br />
-factors <- c() <br />
-primes <- c() <br />
 n = 600851475143
 
-#Sampling the largest factors of n <br />
-div <- c(4601:5200) <br />
-b=1 <br />
-mod <- c() <br />
-while (b<=length(div)) <br />
-{ <br />
-mod <- c(mod,n%%div[b]) <br />
-b=b+1 <br />
-} <br />
-
-#identify factors (largest to smallest), test isPrime <br />
-test = floor(n/2) <br />
-#while (length(primes)==0) <br />
-while (test>(n/2-10000000000)) <br />
-{ <br />
-if (n%%test==0) <br />
-	{ <br />
-	factors <- c(factors,test) <br />
-	} <br />
-test = test - 1 <br />
-} <br />
-factors <br />
-if (isPrime(factors[length(factors)] == 1)) <br />
-	{ <br />
-	primes <- c(primes,test) <br />
-	}  <br />
-test = test-1 <br />
+div <- c(1:sqrt(n)) 
+b=1 
+mod <- c() 
+while (b<=length(div)) 
+{
+if (n%%div[b]==0)
+{ 
+mod <- c(mod,b) 
 }
+b=b+1 
+} 
 
-c=2 <br />
-facts <- c() <br />
-while (c<=sqrt(n)) <br />
-{ <br />
-if (n%%c == 0) <br />
-	{ <br />
-	facts <- c(facts, n/c) <br />
-	} <br />
-c=c+1 <br />
-} <br />
-facts <br />
-isPrime(facts[1]) <br />
+c=length(mod)
+while (isPrime(mod[c])==0)
+{c=c-1}
 
-smallfacts <-c(n/facts) <br />
-isPrime(smallfacts[7]) <br />
-smallfacts[4]
+mod[c]
+
+**Answer: 6,857**
 
 
 *******
